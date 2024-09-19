@@ -1,0 +1,26 @@
+    1  cd lab1
+    2  cd src
+    3  ./background.sh &
+    4  touch new_file.txt
+    5  echo "hello" > new_file.txt
+    6  cat new_file.txt
+    7  clear
+    8  wc -m new_file.txt
+    9  grep "cake" cake_rhymes.txt > with_cake.txt
+   10  rm new_file.txt 2>/dev/null
+   11  chmod +x hello.sh
+   12  ./hello.sh
+   13  nano script1.sh
+   14  chmod +x script1.sh
+   15  ./script1.sh
+   16  nano average.sh
+   17  chmod +x average.sh
+   18  ./average.sh
+   19  ./average 2 4 5 6 7 1
+   20  ./average.sh 2 4 5 6 7 1
+   21  nano generator.sh
+   22  chmod +x generator.sh
+   23  ./generator.sh
+   24  wc -l numbers.txt
+   25  xargs ./average.sh < numbers.txt
+   26  history > commands_lab1
