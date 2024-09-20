@@ -1,0 +1,42 @@
+    # Задание 1
+    1  cd lab2
+    2  cd src
+    3  cd swap
+    4  gcc main.c swap.c -o swap_program
+    5  ./swap_program
+    6  cd ..
+    # Задание 2
+    7  cd revert_string
+    8  gcc main.c revert_string.c -o revert_string
+    9  ./revert_string Bye
+    # Задание 3
+   10  gcc -c -o revert_string.o revert_string.c
+   11  ar rcs librevert.a revert_string.o
+   12  gcc main.c -L. -lrevert -o program_static
+   13  ./program_static Bye
+   14  gcc -c -fPIC revert_string.c -o revert_string.o
+   15  gcc revert_string.o -shared -o librevert.so
+   16  gcc main.c -L. -lrevert -o program_dynamic
+   17  export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH
+   18  ./program_dynamic Bye
+   # Задание 4
+   19  cd ..
+   20  sudo apt -y install libcunit1 libcunit1-doc libcunit1-dev 
+   21  sudo apt -y update
+   22  sudo apt -y install libcunit1 libcunit1-doc libcunit1-dev
+   23  cd lab2
+   24  cd os_lab_2019
+   25  cd lab2
+   26  cd src
+   27  cd revert_string
+   28  gcc -o tests  tests.c -lrevert -lcunit
+   29  cd ..
+   30  cd tests
+   31  gcc -o tests  tests.c -lrevert -lcunit
+   32  gcc -o tests -L. tests.c -lrevert -lcunit
+   33  gcc -I../revert_string -o tests tests -L../revert_string -lrevert -lcunit
+   34  gcc -I../revert_string -o test_program tests.c -L../revert_string -lrevert -lcunit
+   35  export LD_LIBRARY_PATH=../revert_string:$LD_LIBRARY_PATH
+   36  ./test_program
+   37  cd ..
+   38  history > commands_lab2
