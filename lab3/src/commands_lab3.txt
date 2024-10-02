@@ -1,0 +1,26 @@
+    1  cd lab3
+    2  cd src
+    3  gcc -o sequential_min_max sequential_min_max.c find_max_min.c utils.c -I.
+    4  gcc -o sequential_min_max sequential_min_max.c find_min_max.c utils.c -I.
+    5  ./sequential_min_max 33 500
+    6  gcc -o parallel_min_max parallel_min_max.c find_min_max.c utils.c -I.
+    7  ./parallel_min_max --seed 33 --array_size 500 --pnum 5
+    8  ./parallel_min_max --seed 33 --array_size 500 --pnum 5 --by_files
+    9  make sequential_min_max
+   10  make parallel_min_max
+   11  make all
+   12  make clear
+   13  make clean
+   14  make all
+   15  nano run_sequential_min_max.c
+   16  make run_sequential_min_max
+   17  make all
+   18  ./run_sequential_min_max 33 500
+   19  cd ..
+   20  git add lab3/src/run_sequential_min_max.c
+   21  git add lab3/src/find_min_max.c
+   22  git add lab3/src/parallel_min_max.c
+   23  git add lab3/src/makefile
+   24  cd lab3
+   25  cd src
+   26  history > commands_lab3.txt
