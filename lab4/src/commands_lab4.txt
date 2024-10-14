@@ -1,0 +1,46 @@
+    1  cd lab3
+    2  cd src
+    3  cp parallel_min_max.c ../../lab4/src/parallel_min_max.c
+    4  cp utils.c ../../lab4/src/utils.c
+    5  cp utils.h ../../lab4/src/utils.h
+    6  cp find_min_max.c ../../lab4/src/find_min_max.c
+    7  cp find_min_max.h ../../lab4/src/find_min_max.h
+    8  cd ../../lab4/src
+    9  gcc -c find_min_max.c -o find_min_max.o
+   10  gcc -c utils.c -o utils.o
+   11  gcc -o parallel_min_max parallel_min_max.c find_min_max.c utils.c
+   12  ./parallel_min_max --seed 92 --array_size 1000 --pnum 4 --timeout 7
+   13  ./parallel_min_max --seed 92 --array_size 1000 --pnum 4 --timeout 7 --by_files
+   14  gcc -o parallel_min_max parallel_min_max.c find_min_max.c utils.c
+   15  ./parallel_min_max --seed 92 --array_size 1000 --pnum 4 --timeout 7
+   16  ./parallel_min_max --seed 92 --array_size 1000 --pnum 4 --timeout 7 --by_files
+   17  nano zombie.c
+   18  gcc -o zombie zombie.c
+   19  ./zombie
+   20  gcc -Wno-format -o process_memory process_memory.c
+   21  ./process_memory
+   22  cd ../../lab3/src
+   23  cp makefile ../../lab4/src
+   24  cp sequential_min_max.c ../../lab4/src
+   25  cp exec_sequential.c ../../lab4/src
+   26  cp run_sequential_min_max.c ../../lab4/src
+   27  cd ../../lab4/src
+   28  make all
+   29  make clean
+   30  make all
+   31  nano sum_lib.h
+   32  nano sum_lib.c
+   33  gcc -o parallel_sum parallel_sum.c sum_lib.c utils.c -lpthread -Wall -Wno-format
+   34  ./parallel_sum --threads_num 4 --seed 38 --array_size 100000
+   35  mkdir task5_sum
+   36  mv parallel_sum.c ./task5_sum
+   37  mv parallel_sum ./task5_sum
+   38  mv sum_lib.c sum_lib.h ./task5_sum
+   39  cp utils.c ./task5_sum/utils.c
+   40  cp utils.h ./task5_sum/utils.h
+   41  cd task5_sum
+   42  nano makefile
+   43  make
+   44  ./parallel_sum --threads_num 4 --seed 38 --array_size 100000
+   45  cd ..
+   46  history > commands_lab4.txt
