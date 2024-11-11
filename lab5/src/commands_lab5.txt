@@ -1,0 +1,14 @@
+    1  gcc -o mutex_no_lock mutex.c -lpthread
+    2  cd lab5
+    3  cd src
+    4  gcc -o mutex_no_lock mutex.c -lpthread
+    5  ./mutex_no_lock
+    6  gcc -o mutex_lock mutex.c -lpthread
+    7  ./mutex_lock
+    8  nano factorial_mod.c
+    9  gcc -o factorial_mod factorial_mod.c -lpthread
+   10  ./factorial_mod -k 10 -p 4 -m 10
+   11  nano deadlock.c
+   12  gcc -o deadlock deadlock.c -lpthread
+   13  ./deadlock
+   14  history > commands_lab5.txt
