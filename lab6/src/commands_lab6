@@ -1,0 +1,49 @@
+    1  cd lab6
+    2  cd src
+    3  gcc -o client client.c -lpthread
+    4  gcc -o server server.c -lpthread
+    5  touch servers.txt
+    6  ./server --port 20001 --tnum 4 &
+    7  ./server --port 20002 --tnum 4 &
+    8  ./server --port 20003 --tnum 4 &
+    9  ./client --k 4 --mod 7 --servers servers.txt
+   10  gcc -o client client.c -lpthread
+   11  gcc -o server server.c -lpthread
+   12  ./client --k 4 --mod 7 --servers servers.txt
+   13  rm client
+   14  rm server
+   15  gcc -o client client.c -lpthread
+   16  gcc -o server server.c -lpthread
+   17  ./client --k 4 --mod 7 --servers servers.txt
+   18  gcc -o client client.c -lpthread
+   19  gcc -o server server.c -lpthread
+   20  ./client --k 4 --mod 7 --servers servers.txt
+   21  gcc -o client client.c -lpthread
+   22  ./client --k 4 --mod 7 --servers servers.txt
+   23  rm client
+   24  rm server
+   25  gcc -o client client.c -lpthread
+   26  gcc -o server server.c -lpthread
+   27  ./client --k 4 --mod 7 --servers servers.txt
+   28  gcc -o server server.c -lpthread
+   29  gcc -o client client.c -lpthread
+   30  ./client --k 4 --mod 7 --servers servers.txt
+   31  gcc -o server server.c -lpthread
+   32  gcc -o client client.c -lpthread
+   33  gcc -o server server.c -lpthread
+   34  ./server --port 20001 --tnum 4 &
+   35  ./client --k 4 --mod 7 --servers servers.txt
+   36  touch makefile
+   37  nano common.c
+   38  nano common.h
+   39  gcc -c common.c -o common.o
+   40  ar rcs libcommon.a common.o
+   41  gcc -o client client.c -pthread -L. -lcommon
+   42  gcc -o server server.c -pthread -L. -lcommon
+   43  ./client --k --mod 7 --servers servers.txt
+   44  ./client --k 4 --mod 7 --servers servers.txt
+   45  make rebuild
+   46  make run_client
+   47  make rebuild
+   48  make run_client
+   49  history > commands_lab6
